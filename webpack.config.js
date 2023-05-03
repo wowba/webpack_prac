@@ -8,7 +8,9 @@ module.exports = {
   // 작업 이후 생성된 결과물
   output: {
     path:  path.resolve(__dirname, 'dist/'),
-    filename: 'main.js'
+    // 웹팩으로 작업시 매번 해쉬값을 가진 js 파일 생성
+    filename: '[name][contenthash].js',
+    clean: true
   },
   module: {
     rules: [
