@@ -1,4 +1,5 @@
 const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   mode: 'development',
@@ -25,5 +26,12 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    // 플러그인을 다양한 용도로 호출할 수 있으므로 new 연산자로 호출하여 플러그인의 인스턴스를 생성하여 사용
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html'
+    })
+  ]
 }
