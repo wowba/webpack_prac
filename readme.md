@@ -54,3 +54,8 @@ npm install -D webpack-dev-server
 ## devtool
 - config에서 적용할 수 있는 해당 옵션은 소스맵(source map)이 생성되는지 여부와 생성 방법 제어
 - source map은 원본 파일과 연결되어 압축된 코드를 원래 위치로 다시 매핑할 수 있게 한다.
+---
+## Resource Asset
+- 이미지 파일등의 에섯 사용시 추가적인 설정이 없다면 에러 발생
+- 웹팩에서 이미지파일을 번들링하지 못하기 때문
+- config 파일에서 이미지 로더를 추가해야 함.

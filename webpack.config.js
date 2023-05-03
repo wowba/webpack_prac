@@ -11,13 +11,16 @@ module.exports = {
     // 웹팩으로 작업시 매번 해쉬값을 가진 js 파일 생성
     filename: '[name][contenthash].js',
     // 기존 웹팩 빌드 파일 삭제
-    clean: true
+    clean: true,
+    // 에셋 이름 원래대로 설정
+    assetModuleFilename: '[name][ext]'
   },
   // 해당 옵션 적용시 원본 소스 확인 가능
   // name.js.map 파일을 output path에 생성한다.
   devtool: 'source-map',
   module: {
     rules: [
+      // css 로더
       {
         // 로더를 적용할 파일 유형 (일반적으로 정규표현식 사용)
         test: /\.s[ac]ss$/i,
@@ -31,6 +34,7 @@ module.exports = {
           "sass-loader"
         ]
       },
+      // 바벨 로더
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -40,6 +44,11 @@ module.exports = {
             presets: [`@babel/preset-env`]
           }
         }
+      },
+      // 이미지 로더
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        type: 'asset/resource'
       }
     ]
   },
