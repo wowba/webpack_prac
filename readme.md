@@ -40,3 +40,10 @@ npm i -D html-webpack-plugin
 npm install -D webpack-dev-server
 ```
 ---
+## gzip 압축
+- gzip 압축은 대역폭을 절약하고 사이트 속도를 높이는 간단하고 효과적인 방법
+- 구형 브라우저에서는 사용하기 힘들었지만 신형 브라우저에서는 자유롭게 사용 가능
+---
+## devtool
+- config에서 적용할 수 있는 해당 옵션은 소스맵(source map)이 생성되는지 여부와 생성 방법 제어
+- source map은 원본 파일과 연결되어 압축된 코드를 원래 위치로 다시 매핑할 수 있게 한다.

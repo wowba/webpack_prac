@@ -13,6 +13,8 @@ module.exports = {
     // 기존 웹팩 빌드 파일 삭제
     clean: true
   },
+  // 해당 옵션 적용시 원본 소스 확인 가능
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -41,6 +43,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist')
     },
+    // 제공되는 모든 항목에 gzip 압축 활성화
     compress: true,
     port: 3000,
     open: true
