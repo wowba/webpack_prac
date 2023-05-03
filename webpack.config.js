@@ -10,6 +10,7 @@ module.exports = {
     path:  path.resolve(__dirname, 'dist/'),
     // 웹팩으로 작업시 매번 해쉬값을 가진 js 파일 생성
     filename: '[name][contenthash].js',
+    // 기존 웹팩 빌드 파일 삭제
     clean: true
   },
   module: {
@@ -35,5 +36,13 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html'
     })
-  ]
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist')
+    },
+    compress: true,
+    port: 3000,
+    open: true
+  }
 }

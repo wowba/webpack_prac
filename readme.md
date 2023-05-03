@@ -21,14 +21,22 @@ npm i -D css-loader style-loader sass sass-loader
 ```
 npm i -D html-webpack-plugin
 ```
-## plugin 종류
+### plugin 종류
 - HtmlWebpackPlugin
   - webpack 번들을 제공하는 HTML 파일 생성 단순화
 - CleanWebpackPlugin
   - 빌드 이전 결과물 제거
 - MiniCssExtractPlugin
   - CSS가 필요한 JS 파일별로 CSS 파일 생성
-
+---
 ## Webpack Caching
 - 웹팩 컴파일로 생성된 파일에서 변경된 내용이 없다면 브라우저는 캐시 상태를 유지하고 그대로 사용하게 됨.
 - 변경사항 생길시 파일 이름에 Hash 값을 주어 변경 여부 확인 가능.
+---
+## Webpack development server
+- 웹팩에서 자체적으로 개발 서버 실행 가능
+- config 파일에 devServer 항목 작성 후 실행 가능
+```
+npm install -D webpack-dev-server
+```
+---
