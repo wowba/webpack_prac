@@ -16,6 +16,13 @@ npm i -D css-loader style-loader sass sass-loader
   - 리졸브 된 가져오기로 css 파일 로드 및 css 코드 반환 
   - @import 및 url()을 import/require 처럼 해석 css 파일을 하나의 모듈로 취급하여 js 파일에서 불러와서 사용하는 것.
 ---
+## Babel Loader
+- ES6 이상의 자바스크립트 코드는 구버전 브라우저에서 지원 여부 낮음.
+- 구버전 브라우저에서도 최신 자바스크립트 코드를 사용할 수 있게 최신코드를 이전 버전 코드로 트랜스파일링 하는것이 바벨.
+- 웹팩으로 파일을 번들링 할 때에도 바벨을 사용할 수 있게 하는것이 babel-loader
+```
+npm install -D babel-loader @babel/core @babel/preset-env
+```
 ## HTML Webpack Plugin
 - 웹팩이 html 파일을 읽어서 html 파일을 빌드할 수 있게 만들어 줌.
 ```

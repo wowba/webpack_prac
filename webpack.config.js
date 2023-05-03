@@ -14,6 +14,7 @@ module.exports = {
     clean: true
   },
   // 해당 옵션 적용시 원본 소스 확인 가능
+  // name.js.map 파일을 output path에 생성한다.
   devtool: 'source-map',
   module: {
     rules: [
@@ -29,6 +30,16 @@ module.exports = {
           "css-loader",
           "sass-loader"
         ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [`@babel/preset-env`]
+          }
+        }
       }
     ]
   },
